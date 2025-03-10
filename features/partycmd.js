@@ -10,7 +10,7 @@ register('chat', (rank, name) => {
 	if (Party.leader == Player.getName()) {
 		ChatLib.command(`party transfer ${name}`)
 	}
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !ptme$/)
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !ptme$/)
 
 register('chat', (rank, name) => {
 	if (!Config().partywarp) return;
@@ -18,7 +18,7 @@ register('chat', (rank, name) => {
 	if (Party.leader == Player.getName()) {
 		ChatLib.command(`party warp`)
 	}
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !warp$/)
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !warp$/)
 
 register('chat', (rank, name) => {
 	if (!Config().partyallinvite) return;
@@ -26,7 +26,7 @@ register('chat', (rank, name) => {
 	if (Party.leader == Player.getName()) {
 		ChatLib.command(`party settings allinvite`)
 	}
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !allinv$/)
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !allinv$/)
 
 register('chat', (rank, name) => {
 	if (!Config().partykickoffline) return;
@@ -35,7 +35,7 @@ register('chat', (rank, name) => {
 		let offlinePlayers = Party.members.filter(player => !player.isOnline());
         offlinePlayers.forEach(player => ChatLib.command(`party kick ${player.name}`));
 	}
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !kickoffline$/)
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !kickoffline$/)
 
 register('chat', (rank, name, alias, player) => {
 	if (!Config().partyinvite) return;
@@ -43,5 +43,5 @@ register('chat', (rank, name, alias, player) => {
 	if (Party.leader == Player.getName()) {
 		ChatLib.command(`party invite ${player}`)
 	}
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !(inv|invite|p|party) (.+)$/)
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !(inv|invite|p|party) (.+)$/)
 

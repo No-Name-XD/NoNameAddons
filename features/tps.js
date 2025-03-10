@@ -28,4 +28,4 @@ registerWhen(register('packetReceived', () => {
 register("chat", () => {
     if (!Config().tps) return;
     ChatLib.command(`pc Current TPS: ${averageTps.toFixed(2)}`);
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !tps$/);
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !tps$/);
