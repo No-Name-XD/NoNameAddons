@@ -5,6 +5,8 @@ import "./features/partycmd";
 
 
 // Dungeon Commands
+// Dungeon Start
+import "./features/joincata";
 // Blood Helper
 import "./features/blood";
 // Leap Announce

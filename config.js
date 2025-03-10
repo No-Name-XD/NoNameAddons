@@ -6,6 +6,15 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 // Dungeons //
 
+// Join Dungeon
+.addSwitch({
+    category: "Dungeons",
+    configName: "joincata",
+    title: "Join Dungeon Floor",
+    description: "Starts a catacombs floor when someone types !f? or !m?",
+    subcategory: "Join Dungeon"
+})
+
 // Mask Pop Notification
 .addSwitch({
     category: "Dungeons",
@@ -47,7 +56,7 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
     category: "Dungeons",
     configName: "deathtext",
     title: "Death Text",
-    description: "Use {name} to use  dead player's name",
+    description: "Use \",\" to add more message. (Use {name} for dead player)",
     subcategory: "Death Message",
     placeHolder: "BOOM!",
     shouldShow: data => data.deathmessage
