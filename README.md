@@ -22,7 +22,7 @@ I created this by combining and modifying features from existing modules like Me
 
 ## Installation
 
-- Download the [latest release](https://github.com/No-Name-XD/NoNameAddons/)
+- Download the [latest release](https://github.com/No-Name-XD/NoNameAddons/releases/)
 
 - Type `/ct files` or go to `%appdata%/.minecraft/config/chattriggers/modules`
 
