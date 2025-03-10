@@ -26,7 +26,7 @@ I created this by combining and modifying features from existing modules like Me
 
 - Type `/ct files` or go to `%appdata%/.minecraft/config/chattriggers/modules`
 
-- Extract the contents into the folder
+- Extract the `NoNameAddons` (folder) into the (modules) folder
 
 ## Notes
 
