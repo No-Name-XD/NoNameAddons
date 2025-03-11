@@ -9,10 +9,10 @@ let prevTime = null
 let averageTps = 20
 const tpsWindow = 10
 
-register('worldLoad', () => {
+registerWhen(register('worldLoad', () => {
 	prevTime = null
 	averageTps = 20
-})
+}), () => Config().tps);
 
 registerWhen(register('packetReceived', () => {
     if (prevTime !== null) {
@@ -22,10 +22,9 @@ registerWhen(register('packetReceived', () => {
         averageTps = instantTps * alpha + averageTps * (1 - alpha)
     }
     prevTime = Date.now()
-}).setFilteredClass(S03_PACKET_TIME_UPDATE), () => Config().tps)
+}).setFilteredClass(S03_PACKET_TIME_UPDATE), () => Config().tps);
 
 
-register("chat", () => {
-    if (!Config().tps) return;
+registerWhen(register("chat", () => {
     ChatLib.command(`pc Current TPS: ${averageTps.toFixed(2)}`);
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !tps$/);
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?([\w\S ]{1,16}): !tps$/), () => Config().tps);

@@ -1,4 +1,5 @@
 // Credits to kiwidotzip for base
+import { registerWhen } from "../../BloomCore/utils/Utils";
 import Config from "../config";
 
 function showtile(text, duration) {
@@ -9,30 +10,26 @@ function showtile(text, duration) {
     }
 }
 
-register("chat", (event) => {
-    if (!Config().masknotifier) return
+registerWhen(register("chat", (event) => {
     cancel(event)
     showtile(`Bonzo`, 3);
     ChatLib.command(`pc NoNameAddons » Bonzo Mask POPPED (3s)`)
-}).setCriteria("Your ⚚ Bonzo's Mask saved your life!")
+}).setCriteria("Your ⚚ Bonzo's Mask saved your life!"), () => Config().masknotifier)
 
-register("chat", (event) => {
-    if (!Config().masknotifier) return
+registerWhen(register("chat", (event) => {
     cancel(event)
     showtile(`Bonzo`, 3);
     ChatLib.command(`pc NoNameAddons » Bonzo Mask POPPED (3s)`)
-}).setCriteria("Your Bonzo's Mask saved your life!")
+}).setCriteria("Your Bonzo's Mask saved your life!"), () => Config().masknotifier)
 
-register("chat", (event) => {
-    if (!Config().masknotifier) return
+registerWhen(register("chat", (event) => {
     cancel(event)
     showtile(`Spirit Mask`, 3);
     ChatLib.command(`pc NoNameAddons » Spirit Mask POPPED (3s)`)
-}).setCriteria("Second Wind Activated! Your Spirit Mask saved your life!")
+}).setCriteria("Second Wind Activated! Your Spirit Mask saved your life!"), () => Config().masknotifier)
 
-register("chat", (event) => {
-    if (!Config().masknotifier) return
+registerWhen(register("chat", (event) => {
     cancel(event)
     showtile(`Phoenix`, 4);
     ChatLib.command(`pc NoNameAddons » Phoenix Pet POPPED (2-4s)`)
-}).setCriteria("Your Phoenix Pet saved you from certain death!")
+}).setCriteria("Your Phoenix Pet saved you from certain death!"), () => Config().masknotifier)

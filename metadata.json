@@ -1,8 +1,8 @@
 {
     "name"          : "NoNameAddons",
-    "author"        : "LuckIssuing",
+    "author"        : "No-Name-XD",
     "description"   : "Kool Stuff!! Stay Lucky!! (Gives More Rng)",
-    "version"       : "1.0.1",
+    "version"       : "1.2.0",
     "entry"         : "index.js",
     "requires"      : ["Amaterasu", "BloomCore", "PogData"]
 }

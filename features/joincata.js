@@ -1,9 +1,9 @@
 import Config from "../config";
 import Party from "../../BloomCore/Party"
+import { registerWhen } from "../../BloomCore/utils/Utils";
 
-register("chat", (rank, name, floor) => { 
+registerWhen(register("chat", (rank, name, floor) => { 
     if (!Config().partycommands) return;
-    if (!Config().joincata) return;
     if (Party.leader != Player.getName()) return; // Ensure you are the party leader
 
     const floorMap = {
@@ -27,4 +27,4 @@ register("chat", (rank, name, floor) => {
     if (!floorMap[floorKey]) return; // Invalid floor
 
     ChatLib.command(`joininstance ${floorMap[floorKey]}`);
-}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !(f[1-7]|m[1-7])$/);
+}).setCriteria(/Party > (?:\[([^\]]*?)\] )?(\w{1,16}): !(f[1-7]|m[1-7])$/), () => Config().joincata)

@@ -4,16 +4,8 @@ import Settings from "../Amaterasu/core/Settings"
 import DefaultConfig from "../Amaterasu/core/DefaultConfig"
 const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
-// Dungeons //
 
-// Join Dungeon
-.addSwitch({
-    category: "Dungeons",
-    configName: "joincata",
-    title: "Join Dungeon Floor",
-    description: "Starts a catacombs floor when someone types !f? or !m?",
-    subcategory: "Join Dungeon"
-})
+//---- DUNGEONS ---//
 
 // Mask Pop Notification
 .addSwitch({
@@ -29,18 +21,8 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
     category: "Dungeons",
     configName: "blood",
     title: "Blood Helper",
-    description: "Enable blood helper",
-    subcategory: "Blood helper"
-})
-
-// Send Blood times
-.addSwitch({
-    category: "Dungeons",
-    configName: "sendbloodparty",
-    title: "Send blood information",
     description: "Sends blood times to party chat",
-    subcategory: "Blood helper",
-    shouldShow: data => data.blood
+    subcategory: "Blood helper"
 })
 
 // Death Message
@@ -120,7 +102,6 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
     value: 0
 })
 
-
 // Box Terminal
 .addSwitch({
     category: "Dungeons",
@@ -142,12 +123,38 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
     value: 0
 })
 
+//---- CHAT COMMANDS ---//
 
-// Party commands //
+// Join Dungeon
+.addSwitch({
+    category: "Chat Commands",
+    configName: "joincata",
+    title: "Join Dungeon Floor",
+    description: "Starts a catacombs floor when someone types !f? or !m?",
+    subcategory: "Dungeons"
+})
+
+// Downtime Message
+.addSwitch({
+    category: "Chat Commands",
+    configName: "downtime",
+    title: "Downtime Command",
+    description: "Usage - !dt {reason}",
+    subcategory: "Dungeons"
+})
+
+// Switch Chat
+.addSwitch({
+    category: "Chat Commands",
+    configName: "switchat",
+    title: "Switch Chat",
+    description: "Automatically switch between ALL chat and PARTY chat while joining or leaving a party",
+    subcategory: "Switch Chat Channels"
+})
 
 // Party commands Main
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partycommands",
     title: "Party Commands",
     description: "Enables party commands",
@@ -156,7 +163,7 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 // Party Transfer
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partytransfer",
     title: "Party Transfer",
     description: "Transfers the party to the player that ran !ptme",
@@ -166,7 +173,7 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 //  Party Warp
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partywarp",
     title: "Party Warp",
     description: "Warps the party when someone says !warp",
@@ -176,7 +183,7 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 // Party Invite
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partyinvite",
     title: "Party Invite",
     description: "Runs the party invite command when someone says !inv, !invite, !party, !p username in chat",
@@ -186,7 +193,7 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 // All Invites
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partyallinvite",
     title: "AllInvite",
     description: "Toggles allinvite when someone says !allinv or !allinvite",
@@ -196,16 +203,15 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
 
 // Kick Offline
 .addSwitch({
-    category: "Party Commands",
+    category: "Chat Commands",
     configName: "partykickoffline",
-    title: "KickOffline",
+    title: "KickOffline [WIP]",
     description: "Kicks all offline players from the party when someone says !kickoffline",
     subcategory: "Party Commands",
     shouldShow: data => data.partycommands,
 })
 
-
-// Extra //
+//---- EXTRA COMMANDS ---//
 
 // Slayer Kill Time
 .addSwitch({
@@ -256,14 +262,6 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
         ChatLib.chat(`&d&lStay Lucky!!`)
     }
 })
-
-// .addSwitch({
-//     category: "Developer",
-//     configName: "debug",
-//     title: "Debug",
-//     description: "Enables debug messages",
-//     subcategory: "Debug"
-// })
 
 const config = new Settings("NoNameAddons", defaultConf, "data/ColorScheme.json").setCommand("NoNameAddons", ["nna", "luck"])
 config

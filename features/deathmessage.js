@@ -1,12 +1,12 @@
 // Credits to AzuredBlue for base
 
+import { registerWhen } from "../../BloomCore/utils/Utils";
 import Config from "../config";
 import { InDungeon } from "./helperfunction";
 
-register('chat', (name, event) => {
+registerWhen(register('chat', (name, event) => {
     const indungeondebug = InDungeon();
     if (!indungeondebug) return;
-    if (!Config().deathmessage) return
 
     const message = ChatLib.getChatMessage(event)
     if (message.includes('reconnected') || message.includes('Cata Level')) return
@@ -26,6 +26,6 @@ register('chat', (name, event) => {
     ChatLib.command(`pc ${text}`)
 
 
-}).setCriteria(/^ ☠ (\S+) .+/)
+}).setCriteria(/^ ☠ (\S+) .+/), () => Config().deathmessage)
 
 

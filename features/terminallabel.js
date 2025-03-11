@@ -126,11 +126,3 @@ register("renderWorld", () => {
     }
   }
 });
-
-register("command", () => {
-  if (Config().forcerenderterm || Config().debug) {
-  const phaseData = phases[pogData.goldorsection];
-  if (phaseData) {
-    phaseData.forEach(({ text, x, y, z }) => renderText(text, x, y, z));
-  }} 
-}).setName("renderterm");

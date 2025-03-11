@@ -1,8 +1,8 @@
 // Credits to kiwidotzip for base
 
-import settings from "../config";
+import Config from "../config";
 import { registerWhen } from "../../BloomCore/utils/Utils";
-let prefix = `&e[NoNameAddons]`;
+let prefix = `&c&l[NoNameAddons] &8»`;
 
 let startTime = null; 
 let isFighting = false;
@@ -32,5 +32,4 @@ registerWhen(
             startTime = null; 
         }
     }).setFps(10),
-() => settings().slayerkilltimer
-);
+() => Config().slayerkilltimer);

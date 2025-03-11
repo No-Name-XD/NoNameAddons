@@ -1,6 +1,7 @@
 // Credits to AzuredBlue for base
 
-import Config from '../config'
+import Config from '../config';
+import { registerWhen } from "../../BloomCore/utils/Utils";
 
 let replacements = {
 	'<3': '❤',
@@ -35,8 +36,7 @@ let replacements = {
 }
 
 let replaced = false
-register('messageSent', (message, event) => {
-	if (!Config().chatemotes) return
+registerWhen(register('messageSent', (message, event) => {
 	if (message.startsWith('/') && !message.startsWith('/pc') && !message.startsWith('/ac') && !message.startsWith('/gc') && !message.startsWith('/msg') && !message.startsWith('/w') && !message.startsWith('/r')) return
 	replaced = false
 	message = message.split(' ')
@@ -50,4 +50,4 @@ register('messageSent', (message, event) => {
 	if (!replaced) return
 	cancel(event)
 	ChatLib.say(message)
-})
+}), () => Config().chatemotes);
