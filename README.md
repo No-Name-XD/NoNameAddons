@@ -14,7 +14,7 @@ I created this by combining and modifying features from existing modules like Me
 
 ## Features
 
-- Party Commands: Useful chat-based commands. (!warp, !ptme, etc)
+- Chat Commands: Useful chat-based commands. (!warp, !dt, !f7, etc)
 
 - Dungeon Messages & Notifiers: Automatically send important dungeon messages. (Mask Pop, Melody Terminal, etc)
 
