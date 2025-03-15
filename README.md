@@ -28,6 +28,16 @@ I created this by combining and modifying features from existing modules like Me
 
 - Extract the `NoNameAddons` (folder) into the (modules) folder
 
+## Updating
+
+- Type `/ct files` or go to `%appdata%/.minecraft/config/chattriggers/modules`
+
+- Delete the old `NoNameAddons` Folder
+
+- Download the [latest release](https://github.com/No-Name-XD/NoNameAddons/releases/)
+
+- Extract the `NoNameAddons` (folder) into the (modules) folder
+
 ## Notes
 
 This module is a personal project and is not optimized for efficiency.
