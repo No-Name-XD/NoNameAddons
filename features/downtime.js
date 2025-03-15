@@ -8,11 +8,6 @@ let downtimename = "";
 let downtimereason = "";
 
 
-registerWhen(register("worldUnload", () => {
-    downtimename = "";
-    downtimereason = "";
-}), () => Config.downtime);
-
 registerWhen(register('chat', (rank, name, alias, reason) => {
     if (!InDungeon()) return;
     if (downtimename == "") {
@@ -33,4 +28,6 @@ registerWhen(register("chat", (event) => {
         ChatLib.command(`pc [NoNameAddons] » ${downtimename} has requested downtime`);
         ChatLib.chat(`&r&9${line}\n&c&l[NoNameAddons] &8» &a${downtimename} has requested downtime: ${downtimereason}\n&r&9${line}`);
     })
+    downtimename = "";
+    downtimereason = "";
 }).setCriteria(/^\s*> EXTRA STATS <$/), () => Config().downtime);
