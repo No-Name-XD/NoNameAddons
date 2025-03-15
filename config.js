@@ -240,6 +240,15 @@ const defaultConf = new DefaultConfig("NoNameAddons", "data/settings.json")
     subcategory: "misc"
 })
 
+// Ping
+.addSwitch({
+    category: "Extra",
+    configName: "ping",
+    title: "Ping",
+    description: "Send ping in chat when you type !ping",
+    subcategory: "misc"
+})
+
 // Racist
 .addSwitch({
     category: "Extra",

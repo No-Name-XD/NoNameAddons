@@ -20,7 +20,7 @@ import "./features/partycmd";         // Party commands Main
 //---- EXTRA COMMANDS ---//
 import "./features/slayertimer";      // Slayer Kill Time
 import "./features/chatemotes";       // Chat Emotes
-import "./features/tps";              // TPS
+import "./features/stats";              // TPS
 import "./features/racist";           // Racist
 
 import request from "../requestV2"
