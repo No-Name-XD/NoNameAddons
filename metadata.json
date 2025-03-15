@@ -2,7 +2,7 @@
     "name"          : "NoNameAddons",
     "author"        : "No-Name-XD",
     "description"   : "Kool Stuff!! Stay Lucky!! (Gives More Rng)",
-    "version"       : "1.2.0",
+    "version"       : "1.2.1",
     "entry"         : "index.js",
     "requires"      : ["Amaterasu", "BloomCore", "PogData"]
 }
